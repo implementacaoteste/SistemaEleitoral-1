@@ -26,6 +26,7 @@ namespace UITerminalWindows
         {
             bindingSourceEleitor.EndEdit();
             EleitorBLL eleitorBLL = new EleitorBLL();
+            bindingSourceEleitor.DataSource = typeof(Models.Eleitor);
             eleitorBLL.Inerir((Eleitor)bindingSourceEleitor.Current);
             MessageBox.Show("Eleitor cadastrado com sucesso!");
             Close();

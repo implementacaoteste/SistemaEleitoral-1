@@ -26,7 +26,7 @@ namespace DAL
             }
         }
 
-        public void Excluir(Eleitor _eleitor)
+        public void Excluir(int _id)
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             SqlCommand cmd = cn.CreateCommand();
@@ -34,7 +34,7 @@ namespace DAL
             {
                 cmd.CommandText = "DELETE FROM Eleitor WHERE Id = @Id";
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Id", _eleitor.Id);
+                cmd.Parameters.AddWithValue("@Id", _id);
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
