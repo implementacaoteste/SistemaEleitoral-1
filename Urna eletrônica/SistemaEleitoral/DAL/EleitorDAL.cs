@@ -12,7 +12,7 @@ namespace DAL
             SqlCommand cmd = cn.CreateCommand();
             try
             {
-                cmd.CommandText = "INSERT INTO Eleitor(Nome, Titutlo, Votou)VALUES(@Nome, @Titutlo, @Votou)";
+                cmd.CommandText = "INSERT INTO Eleitor(Nome, Titulo, Votou)VALUES(@Nome, @Titulo, @Votou)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", _eleitor.Nome);
                 cmd.Parameters.AddWithValue("@Titulo", _eleitor.Titulo);
