@@ -8,22 +8,40 @@ namespace DAL
     {
         public void Inserir(Eleitor _eleitor)
         {
-			SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-			SqlCommand cmd = cn.CreateCommand();
-			try
-			{
-				cmd.CommandText = "INSERT INTO Eleitor(Nome, Titutlo, Votou)VALUES(@Nome, @Titutlo, @Votou)";
-				cmd.CommandType = CommandType.Text;
-				cmd.Parameters.AddWithValue("@Nome", _eleitor.Nome);
-				cmd.Parameters.AddWithValue("@Titulo", _eleitor.Titulo);
-				cmd.Parameters.AddWithValue("@Votou", _eleitor.Votou);
-				cn.Open();
-				cmd.ExecuteNonQuery();
-			}
-			finally
-			{
-				cn.Close();
-			}
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            SqlCommand cmd = cn.CreateCommand();
+            try
+            {
+                cmd.CommandText = "INSERT INTO Eleitor(Nome, Titutlo, Votou)VALUES(@Nome, @Titutlo, @Votou)";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Nome", _eleitor.Nome);
+                cmd.Parameters.AddWithValue("@Titulo", _eleitor.Titulo);
+                cmd.Parameters.AddWithValue("@Votou", _eleitor.Votou);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public void Excluir(Eleitor _eleitor)
+        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            SqlCommand cmd = cn.CreateCommand();
+            try
+            {
+                cmd.CommandText = "DELETE FROM Eleitor WHERE Id = @Id";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _eleitor.Id);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }
