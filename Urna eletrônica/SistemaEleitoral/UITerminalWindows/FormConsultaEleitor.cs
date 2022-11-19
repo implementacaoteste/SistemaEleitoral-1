@@ -21,7 +21,13 @@ namespace UITerminalWindows
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             EleitorBLL eleitorBLL = new EleitorBLL();
-            bindingSourceEleitor.DataSource = eleitorBLL.BucarPorTitulo(textBoxBuscar.Text);
+
+            if (radioButtonPorTitulo.Checked)
+                bindingSourceEleitor.DataSource = eleitorBLL.BucarPorTitulo(textBoxBuscar.Text);
+            else if(radioButtonPorNome.Checked)
+                bindingSourceEleitor.DataSource = eleitorBLL.BucarPorNome(textBoxBuscar.Text);
+            else
+                bindingSourceEleitor.DataSource = eleitorBLL.BucarPorTitulo("");
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
@@ -47,9 +53,9 @@ namespace UITerminalWindows
                 return;
 
             EleitorBLL eleitorBLL = new EleitorBLL();
-            
+
             eleitorBLL.Excluir(Convert.ToInt32(((DataRowView)bindingSourceEleitor.Current).Row["Id"]));
-            
+
             buttonBuscar_Click(sender, e);
 
             MessageBox.Show("Registro excluído com sucesso!");

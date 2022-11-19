@@ -41,6 +41,9 @@
             this.buttonCadastrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonExcluir = new System.Windows.Forms.Button();
+            this.radioButtonTodos = new System.Windows.Forms.RadioButton();
+            this.radioButtonPorNome = new System.Windows.Forms.RadioButton();
+            this.radioButtonPorTitulo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleitor)).BeginInit();
             this.SuspendLayout();
@@ -110,12 +113,12 @@
             // 
             this.textBoxBuscar.Location = new System.Drawing.Point(12, 80);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(669, 27);
+            this.textBoxBuscar.Size = new System.Drawing.Size(405, 27);
             this.textBoxBuscar.TabIndex = 1;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(694, 79);
+            this.buttonBuscar.Location = new System.Drawing.Point(694, 78);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscar.TabIndex = 2;
@@ -163,11 +166,47 @@
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
+            // radioButtonTodos
+            // 
+            this.radioButtonTodos.AutoSize = true;
+            this.radioButtonTodos.Location = new System.Drawing.Point(423, 80);
+            this.radioButtonTodos.Name = "radioButtonTodos";
+            this.radioButtonTodos.Size = new System.Drawing.Size(70, 24);
+            this.radioButtonTodos.TabIndex = 6;
+            this.radioButtonTodos.TabStop = true;
+            this.radioButtonTodos.Text = "Todos";
+            this.radioButtonTodos.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonPorNome
+            // 
+            this.radioButtonPorNome.AutoSize = true;
+            this.radioButtonPorNome.Location = new System.Drawing.Point(499, 78);
+            this.radioButtonPorNome.Name = "radioButtonPorNome";
+            this.radioButtonPorNome.Size = new System.Drawing.Size(93, 24);
+            this.radioButtonPorNome.TabIndex = 6;
+            this.radioButtonPorNome.TabStop = true;
+            this.radioButtonPorNome.Text = "Por nome";
+            this.radioButtonPorNome.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonPorTitulo
+            // 
+            this.radioButtonPorTitulo.AutoSize = true;
+            this.radioButtonPorTitulo.Location = new System.Drawing.Point(598, 80);
+            this.radioButtonPorTitulo.Name = "radioButtonPorTitulo";
+            this.radioButtonPorTitulo.Size = new System.Drawing.Size(90, 24);
+            this.radioButtonPorTitulo.TabIndex = 6;
+            this.radioButtonPorTitulo.TabStop = true;
+            this.radioButtonPorTitulo.Text = "Por título";
+            this.radioButtonPorTitulo.UseVisualStyleBackColor = true;
+            // 
             // FormConsultaEleitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.radioButtonPorTitulo);
+            this.Controls.Add(this.radioButtonPorNome);
+            this.Controls.Add(this.radioButtonTodos);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.label2);
@@ -199,5 +238,8 @@
         private Button buttonCadastrar;
         private Label label2;
         private Button buttonExcluir;
+        private RadioButton radioButtonTodos;
+        private RadioButton radioButtonPorNome;
+        private RadioButton radioButtonPorTitulo;
     }
 }
