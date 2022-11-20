@@ -33,11 +33,11 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
             this.bindingSourceEleitor = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxTitulo = new System.Windows.Forms.TextBox();
+            this.checkBoxVotou = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleitor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,13 +81,17 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Nome";
             // 
-            // textBox1
+            // textBoxNome
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceEleitor, "Nome", true));
-            this.textBox1.Location = new System.Drawing.Point(12, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(456, 27);
-            this.textBox1.TabIndex = 3;
+            this.textBoxNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceEleitor, "Nome", true));
+            this.textBoxNome.Location = new System.Drawing.Point(12, 81);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(456, 27);
+            this.textBoxNome.TabIndex = 3;
+            // 
+            // bindingSourceEleitor
+            // 
+            this.bindingSourceEleitor.DataSource = typeof(Models.Eleitor);
             // 
             // label3
             // 
@@ -98,38 +102,34 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Titulo";
             // 
-            // textBox2
+            // textBoxTitulo
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceEleitor, "Titulo", true));
-            this.textBox2.Location = new System.Drawing.Point(474, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 27);
-            this.textBox2.TabIndex = 3;
+            this.textBoxTitulo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceEleitor, "Titulo", true));
+            this.textBoxTitulo.Location = new System.Drawing.Point(474, 81);
+            this.textBoxTitulo.Name = "textBoxTitulo";
+            this.textBoxTitulo.Size = new System.Drawing.Size(207, 27);
+            this.textBoxTitulo.TabIndex = 3;
             // 
-            // checkBox1
+            // checkBoxVotou
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bindingSourceEleitor, "Votou", true));
-            this.checkBox1.Location = new System.Drawing.Point(687, 81);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(86, 24);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Já votou";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // bindingSourceEleitor
-            // 
-            this.bindingSourceEleitor.DataSource = typeof(Models.Eleitor);
+            this.checkBoxVotou.AutoSize = true;
+            this.checkBoxVotou.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bindingSourceEleitor, "Votou", true));
+            this.checkBoxVotou.Location = new System.Drawing.Point(687, 81);
+            this.checkBoxVotou.Name = "checkBoxVotou";
+            this.checkBoxVotou.Size = new System.Drawing.Size(86, 24);
+            this.checkBoxVotou.TabIndex = 4;
+            this.checkBoxVotou.Text = "Já votou";
+            this.checkBoxVotou.UseVisualStyleBackColor = true;
             // 
             // FormCadastroEleitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.checkBoxVotou);
+            this.Controls.Add(this.textBoxTitulo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelar);
@@ -149,10 +149,10 @@
         private Button buttonCancelar;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox textBoxNome;
         private Label label3;
-        private TextBox textBox2;
-        private CheckBox checkBox1;
+        private TextBox textBoxTitulo;
+        private CheckBox checkBoxVotou;
         private BindingSource bindingSourceEleitor;
     }
 }

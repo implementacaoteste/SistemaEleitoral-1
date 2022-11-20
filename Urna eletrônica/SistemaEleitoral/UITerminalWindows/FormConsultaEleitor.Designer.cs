@@ -44,6 +44,7 @@
             this.radioButtonTodos = new System.Windows.Forms.RadioButton();
             this.radioButtonPorNome = new System.Windows.Forms.RadioButton();
             this.radioButtonPorTitulo = new System.Windows.Forms.RadioButton();
+            this.buttonAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceEleitor)).BeginInit();
             this.SuspendLayout();
@@ -199,11 +200,22 @@
             this.radioButtonPorTitulo.Text = "Por título";
             this.radioButtonPorTitulo.UseVisualStyleBackColor = true;
             // 
+            // buttonAlterar
+            // 
+            this.buttonAlterar.Location = new System.Drawing.Point(212, 409);
+            this.buttonAlterar.Name = "buttonAlterar";
+            this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
+            this.buttonAlterar.TabIndex = 7;
+            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
+            // 
             // FormConsultaEleitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.radioButtonPorTitulo);
             this.Controls.Add(this.radioButtonPorNome);
             this.Controls.Add(this.radioButtonTodos);
@@ -241,5 +253,6 @@
         private RadioButton radioButtonTodos;
         private RadioButton radioButtonPorNome;
         private RadioButton radioButtonPorTitulo;
+        private Button buttonAlterar;
     }
 }
