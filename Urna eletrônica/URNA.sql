@@ -1,3 +1,8 @@
+USE master
+GO
+
+DROP DATABASE Urna
+GO
 
 CREATE DATABASE Urna
 GO
